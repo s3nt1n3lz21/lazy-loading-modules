@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lazy-loading-modules"
+    }
+  },
+  "defaultProject": "lazy-loading-modules",
+  "cli": {
+    "analytics": false
+  }
 }
