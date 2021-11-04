@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '', 
     component: CustomersComponent,
     resolve: {
-      crisis: CustomerResolverService
+      customer: CustomerResolverService
     }
   }
 ];

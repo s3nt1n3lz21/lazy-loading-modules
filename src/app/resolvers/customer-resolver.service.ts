@@ -1,14 +1,17 @@
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-/* An interface that represents your data model */
+export interface Data {
+  customer: Customer;
+}
 export interface Customer {
   id: number;
   name: string;
 }
 
-export class CustomerResolverService implements Resolve<string> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string> | string {
-    return 'test data';
+export class CustomerResolverService implements Resolve<Customer> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Customer> | Customer {
+    const customer: Customer = { id: 1, name: 'test name' };
+    return of(customer);
   }
 }
